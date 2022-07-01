@@ -1,0 +1,44 @@
+﻿<Window x:Class="PB_Semester_Project.Departments"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PB_Semester_Project"
+        mc:Ignorable="d"
+        Title="Departments" Height="620" Width="1420" Closing="Window_Closing" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <DataGrid x:Name="departmentsGrid" HorizontalAlignment="Left" Height="272" Margin="8,142,0,0" VerticalAlignment="Top" Width="335" d:ItemsSource="{d:SampleData ItemCount=5}"/>
+        <Label Content="Назва" HorizontalAlignment="Left" Height="25" Margin="12,465,0,0" VerticalAlignment="Top" Width="166" FontSize="9" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+        <Label Content="Завідуючий" HorizontalAlignment="Left" Height="25" Margin="179,465,0,0" VerticalAlignment="Top" Width="166" FontSize="9" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+        <TextBox x:Name="directorTextbox" HorizontalAlignment="Left" Height="25" Margin="179,490,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="166" FontSize="11" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+        <Button x:Name="addDepartment" Content="Додати відділ" HorizontalAlignment="Left" Height="22" Margin="12,520,0,0" VerticalAlignment="Top" Width="333" Click="addDepartment_Click"/>
+        <Label Content="Відділи" HorizontalAlignment="Left" Height="54" Margin="8,88,0,0" VerticalAlignment="Top" Width="335" FontSize="24" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+        <DataGrid x:Name="productsGrid" HorizontalAlignment="Left" Height="438" Margin="349,52,0,0" VerticalAlignment="Top" Width="410" d:ItemsSource="{d:SampleData ItemCount=5}"/>
+        <Label Content="Товари відділу" HorizontalAlignment="Left" Height="42" Margin="349,5,0,0" VerticalAlignment="Top" Width="410" FontSize="24" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+        <Label Content="Вибраний товар" HorizontalAlignment="Left" Height="54" Margin="765,172,0,0" VerticalAlignment="Top" Width="260" FontSize="24" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+        <Label Content="Інформація про товар" HorizontalAlignment="Left" Height="29" Margin="765,226,0,0" VerticalAlignment="Top" Width="260" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+        <Label Content="Ціна" HorizontalAlignment="Left" Height="24" Margin="765,305,0,0" VerticalAlignment="Top" Width="130" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+        <TextBox x:Name="salePrice" HorizontalAlignment="Left" Height="24" Margin="898,305,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="130" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+        <Label Content="Вибраний відділ" HorizontalAlignment="Left" Height="54" Margin="764,5,0,0" VerticalAlignment="Top" Width="260" FontSize="24" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+        <Label Content="Інформація про відділ" HorizontalAlignment="Left" Height="29" Margin="765,64,0,0" VerticalAlignment="Top" Width="260" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+        <Button x:Name="deleteDepartment" Content="Видалити вибраний відділ" HorizontalAlignment="Left" Height="24" Margin="768,142,0,0" VerticalAlignment="Top" Width="260" Click="deleteDepartment_Click"/>
+        <Button x:Name="makeSale" Content="Симулювати продаж" HorizontalAlignment="Left" Height="24" Margin="765,366,0,0" VerticalAlignment="Top" Width="269" Click="makeSale_Click"/>
+        <Label Content="Статистика відділу" HorizontalAlignment="Left" Height="54" Margin="1039,5,0,0" VerticalAlignment="Top" Width="351" FontSize="24" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+        <DataGrid x:Name="purchasesGrid" HorizontalAlignment="Left" Height="200" Margin="1039,88,0,0" VerticalAlignment="Top" Width="351" d:ItemsSource="{d:SampleData ItemCount=5}"/>
+        <Label Content="Прибуток:" HorizontalAlignment="Left" Height="54" Margin="1039,520,0,0" VerticalAlignment="Top" Width="202" FontSize="24" VerticalContentAlignment="Center" HorizontalContentAlignment="Right"/>
+        <Label x:Name="profit" Content="" HorizontalAlignment="Left" Height="54" Margin="1246,520,0,0" VerticalAlignment="Top" Width="144" FontSize="24" VerticalContentAlignment="Center" HorizontalContentAlignment="Left"/>
+        <ComboBox x:Name="storesCombo" HorizontalAlignment="Left" Height="36" Margin="10,52,0,0" VerticalAlignment="Top" Width="335" SelectionChanged="storesCombo_SelectionChanged"/>
+        <Label Content="Магазин" HorizontalAlignment="Left" Height="41" Margin="8,6,0,0" VerticalAlignment="Top" Width="335" FontSize="24" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+        <Button x:Name="chooseDepartment" Content="Обрати відділ" HorizontalAlignment="Left" Height="29" Margin="10,419,0,0" VerticalAlignment="Top" Width="333" Click="chooseDepartment_Click"/>
+        <Button x:Name="chooseProduct" Content="Обрати товар" HorizontalAlignment="Left" Height="47" Margin="350,495,0,0" VerticalAlignment="Top" Width="410" Click="chooseProduct_Click"/>
+        <TextBox x:Name="saleAmount" HorizontalAlignment="Left" Height="24" Margin="898,334,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="130" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+        <Label Content="Кількість" HorizontalAlignment="Left" Height="24" Margin="764,334,0,0" VerticalAlignment="Top" Width="130" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+        <Label x:Name="chosenDepartment" Content="" HorizontalAlignment="Left" Height="29" Margin="765,96,0,0" VerticalAlignment="Top" Width="260" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+        <Label x:Name="chosenProduct" Content="" HorizontalAlignment="Left" Height="29" Margin="765,259,0,0" VerticalAlignment="Top" Width="260" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+        <ComboBox x:Name="addDepartmentCombo" HorizontalAlignment="Left" Height="25" Margin="12,490,0,0" VerticalAlignment="Top" Width="166"/>
+        <DataGrid x:Name="salesGrid" HorizontalAlignment="Left" Height="200" Margin="1039,318,0,0" VerticalAlignment="Top" Width="351" d:ItemsSource="{d:SampleData ItemCount=5}"/>
+        <Label Content="Закупки" HorizontalAlignment="Left" Height="29" Margin="1092,59,0,0" VerticalAlignment="Top" Width="260" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+        <Label Content="Продажі" HorizontalAlignment="Left" Height="29" Margin="1092,289,0,0" VerticalAlignment="Top" Width="260" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+
+    </Grid>
+</Window>
